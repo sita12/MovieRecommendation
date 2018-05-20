@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: password
+  host:     <%= ENV['IP'] %>
+
+development:
+  <<: *default
+  database: college_project_development
+
+test:
+  <<: *default
+  database: college_project_test
+
+production:
+  <<: *default
+  database: college_project_production
+
