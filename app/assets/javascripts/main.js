@@ -83,7 +83,17 @@ function displayMovies(data){
             <b>Homepage: </b> ${movie["homepage"]}<br />
             <b>Tmdb Id: </b> ${movie["tmdb_id"]}<br />
             <b>Imdb Id: </b> ${movie["imdb_id"]}<br />
-            <b>Popularity: </b> ${movie["popularity"]}<br />`;
+            <b>Popularity: </b> ${movie["popularity"]}<br />
+
+            <form id="rating-form" action="/reviews" method="POST">
+              <input type="hidden" name="authenticity_token" value=${window._token} />
+              <input type="hidden" name="tmdb_id" value=${movie["id"]} />
+              <textarea name= "review[rating]" class="form-control" placeholder="Your review in 140 characters"/>
+              <br />
+              <input type="submit" class="btn btn-success pull-right" />
+            </form>
+
+            `;
              container.append(htmlString);
 
              
