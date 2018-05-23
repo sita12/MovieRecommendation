@@ -88,7 +88,8 @@ function displayMovies(data){
             <form id="rating-form" action="/reviews" method="POST">
               <input type="hidden" name="authenticity_token" value=${window._token} />
               <input type="hidden" name="tmdb_id" value=${movie["id"]} />
-              <textarea name= "review[rating]" class="form-control" placeholder="Your review in 140 characters"/>
+              <b> Ratings: </b>
+              <input type="text" name= "review[rating]" class="form-control" placeholder="Ratings out of 10">
               <br />
               <input type="submit" class="btn btn-success pull-right" />
             </form>

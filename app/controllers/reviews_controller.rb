@@ -1,5 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
+      def initialize(tmdb_id:)
+      @tmdb_id = tmdb_id
+      @movie = Movie.find_or_initialize_by(tmdb_id: @tmdb_id)
+      Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293")
+    Tmdb::Api.language("en")
+    end
 
   def create
     @movie = Movie.find_or_initialize_by(tmdb_id: params[:tmdb_id])
@@ -45,6 +51,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:user, :movie ,:rating)
+    params.require(:review).permit(:rating)
   end
 end
