@@ -84,6 +84,7 @@ function displayMovies(data){
             <b>Tmdb Id: </b> ${movie["tmdb_id"]}<br />
             <b>Imdb Id: </b> ${movie["imdb_id"]}<br />
             <b>Popularity: </b> ${movie["popularity"]}<br />
+            <b>Popularity: </b> ${movie["rating"]}<br />
 
             <form id="rating-form" action="/reviews" method="POST">
               <input type="hidden" name="authenticity_token" value=${window._token} />

@@ -1,15 +1,16 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
-      def initialize(tmdb_id:)
-      @tmdb_id = tmdb_id
-      @movie = Movie.find_or_initialize_by(tmdb_id: @tmdb_id)
-      Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293")
-    Tmdb::Api.language("en")
-    end
+    #   def initialize(tmdb_id:)
+    #   @tmdb_id = tmdb_id
+    #   @movie = Movie.find_or_initialize_by(tmdb_id: @tmdb_id)
+    #   Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293")
+    # Tmdb::Api.language("en")
+    # end
 
   def create
     @movie = Movie.find_or_initialize_by(tmdb_id: params[:tmdb_id])
-
+          Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293")
+    Tmdb::Api.language("en")
     if @movie.new_record?
       # fetch movie data from API using params[:tmdb_id]
       @fetched_movie = Tmdb::Movie.detail(params[:tmdb_id])
@@ -22,7 +23,7 @@ class ReviewsController < ApplicationController
       @movie.runtime = @fetched_movie.runtime
       @movie.popularity = @fetched_movie.popularity
       # @movie.genre = @fetched_movie.genres.collect { |x| x[:name] }
-      @fetched_movie.genres.each { |x| @movie.genre += (x.name + " ")}
+      #@fetched_movie.genres.each { |x| @movie.genre += (x.name + " ")}
       @movie.language = @fetched_movie.original_language
       @movie.budget = @fetched_movie.budget
       @movie.average_vote = @fetched_movie.vote_average
