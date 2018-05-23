@@ -7,6 +7,23 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+     
+      <h3> RATINGS </h3>
+      <h5> Rate out of 10(__/10) </h5>
+    <div class="field">
+    <%= f.label :Comedy %><br />
+    <%= f.number_field :comedy %>
+  </div>
+
+    <div class="field">
+    <%= f.label :Action %><br />
+    <%= f.number_field :action %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Romance %><br />
+    <%= f.number_field :romance %>
+  </div>
 
   <div class="field">
     <%= f.label :password %>
@@ -20,6 +37,7 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
