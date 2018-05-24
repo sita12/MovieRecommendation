@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
     def index
-    end    
+    end   
+    def profile 
+    end     
 end

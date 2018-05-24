@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :reviews
   resources :movies
    resources :users
+   get 'profile' => 'movies#profile'
 end
