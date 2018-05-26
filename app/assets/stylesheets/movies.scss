@@ -1,3 +1,73 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+footer,
+header,
+nav,{
+  display: block;}
+
+html {
+  background: #fff;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+
+  /*
+ * Global Styles
+ */
+
+ html,
+ button,
+ input,
+ select,
+ textarea {
+   font-family: sans-serif; }
+
+ body {
+    background-color: #131a20;
+    background-image: url(./background.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    color: #84878d;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal; 
+    margin: 0;}
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 0 0 20px; }
+  
+  hr {
+    border: none;
+    border-bottom: 1px solid #777; }
+  
+  ul, ol {
+    margin: 0;
+    padding-left: 0; }
+  
+  a {
+    text-decoration: none;
+    color: #ffaa3c; }
+  
+  address {
+    font-style: normal; }
+  
+  p {
+    margin-top: 0; }
+  
+  form input, form textarea, form select {
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none; }
+  form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  form textarea {
+    resize: vertical; }
+
