@@ -16,13 +16,44 @@
   </div>
   <br/>
   <div class="col-xs-12 col-md-6 col-md-offset-3 " style="margin-top:50px ">
- 
+  
+    
     <div id="movies">
-
-  </div>
+    <h1 style="color:green">RECOMMENDATION: </h1>
+       <% @movie.each do |m| %>
+                <div class="box panel panel-default pull-left">
+                    <div class="panel-body">
+                        <p><h3 style="color:red"><%= m.title %></h3></p>
+                        <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
+                         <% Tmdb::Api.language("en") %>
+                       <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
+                       <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                    </div>
+                </div>
+            <% end %>
+    </div>
     
   </div>
 </div>
 <% else %>
 <h1> PLEASE LOG IN </h1>
 <% end %>
+
+ <script>
+ function getBaseImageUrl(){
+    var url = "";
+    var settings = {
+      "async": false,
+      "crossDomain": true,
+      "url": "https://api.themoviedb.org/3/configuration?api_key=3deceb9041e72a8856191ddeaf96a293",
+      "method": "GET",
+      "headers": {},
+      "data": "{}"
+    }
+
+    $.ajax(settings).done(function (response) {
+      url = response["images"]["base_url"] + response["images"]["poster_sizes"][3];
+    });
+    return url;
+  }
+  </script>
