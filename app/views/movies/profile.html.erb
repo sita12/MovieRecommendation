@@ -14,7 +14,7 @@
 
 <br/>
 <br/>
-<h2> MOVIES RATED </h2>
+<h3 style="color: blue"> MOVIES RATED </h3>
 <% @review.each do |rev| %>
 <% if rev.user.id ==  current_user.id %>
 <h3 style="color: red"> <%= rev.movie.title %> </h3>
