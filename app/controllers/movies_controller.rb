@@ -4,5 +4,6 @@ class MoviesController < ApplicationController
         @recent_reviews = Review.recent
         end  
     def profile 
+        @review=Review.all
     end     
 end
