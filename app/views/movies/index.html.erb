@@ -20,6 +20,7 @@
     
     <div id="movies">
     <h1 style="color:green">RECOMMENDATION: </h1>
+    <% if @movie != nil %>
        <% @movie.each do |m| %>
                 <div class="box panel panel-default pull-left">
                     <div class="panel-body">
@@ -31,6 +32,7 @@
                     </div>
                 </div>
             <% end %>
+        <% end %>    
     </div>
     
   </div>
