@@ -27,9 +27,8 @@
                         <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
                          <% Tmdb::Api.language("en") %>
                        <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
-                       <% if @mov? %>
-                       <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
-                       <% end %>
+                  
+                       <%= @mov.blank? ? 'N/A' : image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
                     </div>
                 </div>
             <% end %>
