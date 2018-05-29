@@ -20,7 +20,6 @@
     
     <div id="movies">
     <h1 style="color:green">RECOMMENDATION: </h1>
-    <% if @movie != nil %>
        <% @movie.each do |m| %>
                 <div class="box panel panel-default pull-left">
                     <div class="panel-body">
@@ -28,11 +27,12 @@
                         <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
                          <% Tmdb::Api.language("en") %>
                        <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
+                       <% if @mov != nil %>
                        <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                       <% end %>
                     </div>
                 </div>
             <% end %>
-        <% end %>    
     </div>
     
   </div>
