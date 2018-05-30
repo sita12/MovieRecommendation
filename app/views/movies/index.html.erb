@@ -25,10 +25,14 @@
                     <div class="panel-body">
                         <p><h3 style="color:red"><%= m.title %></h3></p>
                         <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
-                         <% Tmdb::Api.language("en") %>
+                         <% Tmdb::Api.language("en") %> 
+                         <% if m.poster != nil   %>
                        <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
                   
-                       <%= @mov.blank? ? 'N/A' : image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                       <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                       <% else %>
+                       <%= image_tag("/assets/no.jpg") %>
+                       <% end %>
                     </div>
                 </div>
             <% end %>
