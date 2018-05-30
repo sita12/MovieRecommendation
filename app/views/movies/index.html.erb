@@ -26,12 +26,12 @@
                         <p><h3 style="color:red"><%= m.title %></h3></p>
                         <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
                          <% Tmdb::Api.language("en") %> 
-                         <% if m.poster != nil   %>
+                         <% if  m.poster != nil   %>
                        <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
                   
                        <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
                        <% else %>
-                       <%= image_tag("/assets/no.jpg") %>
+                       <%= image_tag("no.jpg") %>
                        <% end %>
                     </div>
                 </div>
@@ -44,21 +44,3 @@
 <h1> PLEASE LOG IN </h1>
 <% end %>
 
- <script>
- function getBaseImageUrl(){
-    var url = "";
-    var settings = {
-      "async": false,
-      "crossDomain": true,
-      "url": "https://api.themoviedb.org/3/configuration?api_key=3deceb9041e72a8856191ddeaf96a293",
-      "method": "GET",
-      "headers": {},
-      "data": "{}"
-    }
-
-    $.ajax(settings).done(function (response) {
-      url = response["images"]["base_url"] + response["images"]["poster_sizes"][3];
-    });
-    return url;
-  }
-  </script>
