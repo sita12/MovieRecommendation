@@ -19,14 +19,14 @@
   
     
     <div id="movies">
-    <h1 style="color:green">RECOMMENDATION: </h1>
+    <h1 style="color:green">Recent Reviewed Movie: </h1>
        <% @movie.each do |m| %>
                 <div class="box panel panel-default pull-left">
                     <div class="panel-body">
                         <p><h3 style="color:red"><%= m.title %></h3></p>
                         <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
                          <% Tmdb::Api.language("en") %> 
-                         <% if  m.poster != nil   %>
+                         <% if  m.poster != nil && Tmdb::Movie.posters(m.tmdb_id).first != nil  %>
                        <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
                   
                        <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
@@ -40,6 +40,15 @@
     
   </div>
 </div>
+       <h1 style="color:blue">Recommendation: </h1>
+          <% @user.each do |u| %>
+          <% if u.id != current_user.id && u.romance == current_user.romance && u.comedy == current_user.comedy && u.action == current_user.action %>
+             <% u.reviews.each do |rev| %>
+             <h3> <%= u.username %>
+             <h3> <%= rev.movie.title %> </h3>
+          <% end %> 
+          <% end %>    
+          <% end %> 
 <% else %>
 <h1> PLEASE LOG IN </h1>
 <% end %>
