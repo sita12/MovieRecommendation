@@ -43,6 +43,7 @@ function displayMovies(data){
     data["results"].forEach(function(movie){
       htmlString += `
       <img src=${movie["poster_path"] == null ? "/assets/no.jpg" : imageUrl + "/" + movie["poster_path"]} data-id="${movie['id']}" class="movie_poster"/>
+                      <h6 style="color:green"> (*** Click image to give rating ***) </h6>
                      <p>${movie["title"]}</p>
                      <p>${movie["overview"]}</p>`;
     });
