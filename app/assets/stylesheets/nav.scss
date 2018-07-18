@@ -23,25 +23,21 @@
       #branding .site-title {
         margin: 0;
         text-transform: uppercase;
-        color: white;
+        color: rgb(58, 2, 2);
         font-size: 16px;
         font-size: 1.0666666667em; }
         #branding .site-title a {
-          color: white; }
+          color: rgb(3, 5, 107); }
       #branding .site-description {
         font-size: 13px;
         font-size: 0.8666666667em;
-        color: #9198af; }
-    .logo{
-      background-color: whitesmoke;
-      border-radius: 20px;
-    }
+        color: #128d37; }
   
   
   //Navigation
   .main-navigation {
     float: right;
-    background: white;
+    background: rgb(26, 0, 0);
     border-radius: 5px; }
     .main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
       display: inline-block;
@@ -95,3 +91,44 @@
         right: 0;
         margin: 0 auto;
         display: block; }
+
+
+        .search-form{
+          input{
+            background-color: #f0f0f0;
+            border: none;
+            // border-left: 1px solid white;
+            border-radius:2px solid rgb(26, 0, 0);
+            font-family: inherit;
+            font-weight: 300;
+            width: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s ease;
+            padding: 10px 0;
+      
+            &.active{
+              width:200px;
+              visibility: visible;
+              opacity: 1;
+              padding: 10px;
+            }
+          }
+          button{
+            background-color: transparent;
+            border:none;
+            // border-left: 1px solid white;
+            border-radius: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            margin-left: -5px;
+            color: inherit;
+            box-shadow: none;
+            outline: none;
+            transition: .3s ease;
+      
+            &.active{
+              background-color: #f0f0f0;
+            }
+          }
+        }

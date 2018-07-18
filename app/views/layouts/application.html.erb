@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CollegeProject</title>
+    <title>HernaJau.com</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,21 +18,25 @@
 
     <link rel="stylesheet" href="./stylesheets/navbar.scss" type="text/css">
     <link rel="stylesheet" href="./stylesheets/footer.scss" type="text/css">
+    <link rel="stylesheet" href="./stylesheets/movies.scss" type="text/css">
 
   </head>
 
   <body>
-  <nav>
-   <div class="navbar">
-       <%= render  "shared/nav" %>
-    </div>
 
-    <div class="maincontent">
-      <%= yield %>
-    </div>
+      <div class="wrapper">
+          <div class="navbar">
+            <%= render  "shared/nav" %>
+          </div>
 
-    <div class="footer">
-       <%= render  "shared/footer" %>
-    </div>
+          <div class="contents">
+            <%= yield %>
+          </div>
+
+          <div class="footer">
+            <%= render  "shared/footer" %>
+          </div>
+      </div>
+   
   </body>
 </html>
