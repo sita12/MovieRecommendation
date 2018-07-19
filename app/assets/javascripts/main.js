@@ -17,7 +17,7 @@
 		});
 
 
-		$(".slider").flexslider({
+		$(".slides").flexslider({
 			controlNav: false,
 			prevText:'<i class="fa fa-chevron-left"></i>',
 			nextText:'<i class="fa fa-chevron-right"></i>',

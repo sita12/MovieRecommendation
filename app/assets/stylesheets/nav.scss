@@ -1,7 +1,7 @@
 // Header Styles
 
 .site-header {
-    padding: 50px 0;
+    padding: 10px 0 5px 0;
     *zoom: 1; }
     .site-header:after {
       content: " ";
@@ -19,26 +19,25 @@
       #branding .logo, #branding .logo-copy {
         display: inline-block; }
       #branding .logo {
-        margin-right: 10px; }
-      #branding .site-title {
-        margin: 0;
-        text-transform: uppercase;
-        color: rgb(58, 2, 2);
-        font-size: 16px;
-        font-size: 1.0666666667em; }
-        #branding .site-title a {
-          color: rgb(3, 5, 107); }
-      #branding .site-description {
-        font-size: 13px;
-        font-size: 0.8666666667em;
-        color: #128d37; }
+        margin-right: 5px; }
+      // #branding .site-title {
+      //   margin: 0;
+      //   text-transform: uppercase;
+      //   color: rgb(58, 2, 2);
+      //   font-size: 16px; }
+      //   #branding .site-title a {
+      //     color: rgb(3, 5, 107); }
+      // #branding .site-description {
+      //   font-size: 13px;
+      //   color: #26575e; }
   
   
   //Navigation
   .main-navigation {
     float: right;
     background: rgb(26, 0, 0);
-    border-radius: 5px; }
+    border-radius: 5px; 
+    margin: 60px 40px;}
     .main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
       display: inline-block;
       vertical-align: middle; }
