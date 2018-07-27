@@ -58,35 +58,26 @@ function displayMovies(data){
     function displayMovie(movie){
         let container = $("#movies");
         let htmlString = "";
-        
         var imageUrl = getBaseImageUrl();
-
         container.empty();
         htmlString +=
         `    
-
-            
             <img src=${movie["poster_path"] == null ? "/assets/no.jpg" : imageUrl + "/" + movie["poster_path"]} data-id="${movie['id']}" class = "movie_poster" />
             <h1>${movie["title"]}</h2>
             <br /> <br /> <br /> <br />
-            <h3>Vote Average:${movie["vote_average"]}</h3>
            <b> Adult:</b> ${movie["adult"]}<br />
             <b>Overview: </b> ${movie["overview"]}<br />
             <b>Original Title: </b> ${movie["original_title"]}<br />
             <b>Original Language: </b> ${movie["original_language"]}<br />
             <b>Release Date: </b> ${movie["release_date"]}<br />
             <b>Plot: </b> ${movie["plot"]}<br />
-            <b>Runtime: </b> ${movie["runtime"]}<br />
             <b>Released: </b> ${movie["released"]}<br />
-            <b>Genre: </b> ${movie["genre"]}<br />
             <b>Language: </b> ${movie["language"]}<br />
             <b>Budget: </b> ${movie["budget"]}<br />
             <b>Homepage: </b> ${movie["homepage"]}<br />
             <b>Tmdb Id: </b> ${movie["tmdb_id"]}<br />
             <b>Imdb Id: </b> ${movie["imdb_id"]}<br />
             <b>Popularity: </b> ${movie["popularity"]}<br />
-            
-
             <form id="rating-form" action="/reviews" method="POST">
               <input type="hidden" name="authenticity_token" value=${window._token} />
               <input type="hidden" name="tmdb_id" value=${movie["id"]} />
@@ -95,11 +86,8 @@ function displayMovies(data){
               <br />
               <input type="submit" class="btn btn-success pull-right" />
             </form>
-
             `;
              container.append(htmlString);
-
-             
 }
       
  function getBaseImageUrl(){
