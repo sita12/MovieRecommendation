@@ -45,39 +45,19 @@
 
           <% if u.id != current_user.id && u.romance == current_user.romance && u.comedy == current_user.comedy && u.action == current_user.action %>
              <% u.reviews.each do |rev| %>
+             <% if rev.rating >= 4 %>
              <h3 style="color:green"> <%= u.username %> </h3>
              <h3 style="color:red"> <%= rev.movie.title %> </h3>
+                   <% if  rev.movie.poster != nil && Tmdb::Movie.posters(rev.movie.tmdb_id).first != nil  %>
+                       <%  @mov = Tmdb::Movie.posters(rev.movie.tmdb_id).first.file_path %>
+                  
+                       <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                       <% else %>
+                       <%= image_tag("no.jpg") %>
+                       <% end %>
+             <% end %>
           <% end %>
-            <% elsif u.id != current_user.id && u.romance == current_user.romance && u.comedy == current_user.comedy %>
-             <% u.reviews.each do |rev| %>
-             <h3 style="color:green"> <%= u.username %> </h3>
-             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-          <% end %>
-            <% elsif u.id != current_user.id && u.romance == current_user.romance && u.action == current_user.action %>
-             <% u.reviews.each do |rev| %>
-             <h3 style="color:green"> <%= u.username %> </h3>
-             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-          <% end %>
-                    <% elsif u.id != current_user.id && u.action == current_user.action && u.comedy == current_user.comedy %>
-             <% u.reviews.each do |rev| %>
-             <h3 style="color:green"> <%= u.username %> </h3>
-             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-          <% end %>
-            <% elsif u.id != current_user.id && u.romance == current_user.romance  %>
-             <% u.reviews.each do |rev| %>
-             <h3 style="color:green"> <%= u.username %> </h3>
-             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-          <% end %>
-            <% elsif u.id != current_user.id && u.action == current_user.action  %>
-             <% u.reviews.each do |rev| %>
-             <h3 style="color:green"> <%= u.username %>  </h3>
-             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-          <% end %>
-          <% elsif u.id != current_user.id && u.comedy == current_user.comedy  %>
-             <% u.reviews.each do |rev| %>
-             <h3 style="color:green"> <%= u.username %>  </h3>
-             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-          <% end %>
+
           <% end %> 
           
           <% end %> 
