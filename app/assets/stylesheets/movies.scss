@@ -1,3 +1,300 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+footer,
+header,
+nav,{
+  display: block;}
+
+html,body {
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+
+  /*
+ * Global Styles
+ */
+
+ html,
+ button,
+ input,
+ select,
+ textarea {
+   font-family: sans-serif; }
+
+ body {
+    background-color: #c1cccbe5;
+    color: #84878d;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal; 
+    margin: 0;}
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 0 0 20px; }
+  
+  hr {
+    border: none;
+    border-bottom: 1px solid #777; }
+  
+  ul, ol {
+    margin: 0;
+    padding-left: 0; }
+  
+  a {
+    text-decoration: none;
+    color: #ffaa3c; }
+  
+  address {
+    font-style: normal; }
+  
+  p {
+    margin-top: 0; }
+  
+  form input, form textarea, form select {
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none; }
+  form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  form textarea {
+    resize: vertical; }
+
+.wrapper{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.bodycontainer{
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*
+ * Reusable Components Style
+ */
+ .button, form input[type="submit"], form button, form input[type="reset"], .contact-form input[type="submit"] {
+  border: none;
+  background: #ffaa3c;
+  padding: 10px;
+  border-radius: 3px;
+  color: #92601e;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-transition: .3s ease;
+          transition: .3s ease; }
+  .button:hover, form input[type="submit"]:hover, form button:hover, form input[type="reset"]:hover, .contact-form input[type="submit"]:hover, .button:focus, form input[type="submit"]:focus, form button:focus, form input[type="reset"]:focus, .contact-form input[type="submit"]:focus {
+    background-color: #ffc06f; }
+
+.slider {
+  position: relative;
+  margin-bottom: 10px; }
+  .slider .slides {
+    list-style: none;
+    *zoom: 1; }
+    .slider .slides:after {
+      content: " ";
+      clear: both;
+      display: block;
+      overflow: hidden;
+      height: 0; }
+  .slider li {
+    border-radius: 5px;
+    overflow: hidden; }
+  .slider img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block; }
+  .slider .flex-direction-nav {
+    list-style: none;
+    z-index: 2;
+    position: absolute;
+    top: 45%;
+    width: 100%; }
+    .slider .flex-direction-nav a {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: white;
+      text-align: center;
+      line-height: 2.5;
+      font-size: 18px;
+      font-size: 1.2em;
+      display: block;
+      position: absolute;
+      -webkit-transition: .3s ease;
+              transition: .3s ease; }
+      .slider .flex-direction-nav a:hover {
+        background-color: #ffaa3c;
+        color: white; }
+    .slider .flex-direction-nav .flex-prev {
+      left: 30px; }
+    .slider .flex-direction-nav .flex-next {
+      right: 30px; }
+
+.latest-movie {
+  margin-bottom: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%; }
+  .latest-movie img {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    height: 250px; }
+
+
+  .container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  *zoom: 1; }
+  .container:after {
+  content: " ";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0; }
+  @media (min-width: 768px) {
+  .container {
+    width: 750px; } }
+  @media (min-width: 992px) {
+  .container {
+    width: 970px; } }
+  @media (min-width: 1200px) {
+  .container {
+    width: 1170px; } }
+
+  .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  *zoom: 1; }
+  .container-fluid:after {
+  content: " ";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0; }
+
+  .row {
+  margin-left: -15px;
+  margin-right: -15px;
+  height: 40%;
+  width: 100%;
+  margin-bottom: 20px;
+  *zoom: 1; }
+  .row:after {
+  content: " ";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0; }
+
+  .main-content .container {
+    background: white;
+    border-radius: 5px;
+    padding: 30px; }
+
+ 
+  .no-bullet {
+    list-style: none; }
+
+  .leading {
+    font-size: 26px;
+    font-size: 1.7333333333em;
+    font-weight: 300; }
+
+  .page figure {
+    margin-bottom: 30px; }
+  .page img {
+    max-width: 100%; }
+  .page .movie-title {
+    font-size: 36px;
+    font-size: 2.4em;
+    font-weight: 300; }
+
+  .filters {
+    margin-bottom: 50px; }
+    .filters select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 10px 50px 10px 10px;
+      background-color: #e7e7e7;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+      outline: none;
+      background-image: url(images/select.png);
+      background-repeat: no-repeat;
+      background-position: 100% center; }
+
+  .movie-list {
+    margin: 0 -15px; }
+    .movie-list .movie {
+      width: 25%;
+      padding: 0 15px;
+      float: left;
+      margin-bottom: 30px; }
+      @media screen and (min-width: 991px) {
+        .movie-list .movie:nth-child(4n+1) {
+          clear: both; } }
+      @media screen and (max-width: 990px) {
+        .movie-list .movie {
+          width: 50%; }
+          .movie-list .movie:nth-child(4n+1) {
+            clear: none; }
+          .movie-list .movie:nth-child(2n+1) {
+            clear: both; } }
+      @media screen and (max-width: 480px) {
+        .movie-list .movie {
+          width: 100%;
+          clear: both; } }
+      .movie-list .movie .movie-poster {
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border: 1px solid transparent; }
+        .movie-list .movie .movie-poster img {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          -webkit-transition: .3s ease;
+                  transition: .3s ease; }
+      .movie-list .movie:hover img {
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2); }
+      .movie-list .movie .movie-title {
+        font-size: 24px;
+        font-size: 1.6em;
+        font-weight: 300;
+        margin-bottom: 20px; }
+        .movie-list .movie .movie-title a {
+          color: #84878d;
+          -webkit-transition: .3s ease;
+                  transition: .3s ease; }
+          .movie-list .movie .movie-title a:hover {
+            color: #ffaa3c; }
