@@ -1,4 +1,4 @@
-
+<!-- 
  <h2>Sign up</h2>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name))  do |f| %>
 
@@ -66,5 +66,98 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 </script>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> -->
+
+<div class="signup-page">
+
+  <div class="form">
+    
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+
+        <div class="field">
+          <%= f.input :username %>
+        </div>
+
+        <div class="field">
+          
+          <%= f.input :email %>
+        </div>
+          
+            <h4> RATINGS </h4>
+            <h5> Rate out of 5(__/5) </h5>
+          <div class="field">
+       
+          <%= f.input :comedy %>
+        </div>
+
+          <div class="field">
+          <%= f.input :action %>
+        </div>
+
+        <div class="field">
+        
+          <%= f.input :romance %>
+        </div>
+          
+      <div class="field">
+    
+        <%= f.input :photo %>
+      </div> 
+
+        <div class="field">
+          
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.input :password, autocomplete: "off" %>
+        </div>
+
+        <div class="field">
+         
+          <%= f.input :password_confirmation, autocomplete: "off" %>
+        </div>
+
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+        <script>
+var password = document.getElementById("user_password")
+  , confirm_password = document.getElementById("user_password_confirmation");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Password Did not match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+      <% end %>
+        <div class="loginlink">
+          <p>or</p>
+          <%= render "devise/shared/links" %>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 

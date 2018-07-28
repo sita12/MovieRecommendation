@@ -1,3 +1,4 @@
+<!-- 
 <% if user_signed_in? %>
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -63,5 +64,142 @@
           <% end %> 
 <% else %>
 <h1> PLEASE LOG IN </h1>
-<% end %>
+<% end %> -->
+<main class="main-content">
+        <div class="container">
 
+            <% if user_signed_in? %>
+            <div class="page">
+                <div class="row">
+                  <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <h1 class="text-center" style="color:purple ">Search Movie</h1>
+                    <div class="row">
+                      <form id="movie-search">
+                        <div class="col-xs-8">
+                          <input type="text" name="query" class="form-control" placeholder="Enter Movie Name">
+                        </div>
+                        <div class="col-xs-4">
+                          <button type="submit" class="btn btn-success">Search</button>
+                        </div>
+                      </form>
+                    </div>
+                
+                  </div>
+
+
+                  <div class="row">
+
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 " style="margin-top:50px ">              
+                    
+                        <div id="movies">
+
+                            <h1 style="color:green">Recently Rated Movie: </h1>
+                               <% @movie.each do |m| %>
+                                      <div class="box panel panel-default pull-left">
+                                          <div class="panel-body">
+                                              <p><h3 style="color:red"><%= m.title %></h3></p>
+                                              <% Tmdb::Api.key("3deceb9041e72a8856191ddeaf96a293") %>
+                                              <% Tmdb::Api.language("en") %> 
+                                              <% if  m.poster != nil && Tmdb::Movie.posters(m.tmdb_id).first != nil  %>
+                                            <%  @mov = Tmdb::Movie.posters(m.tmdb_id).first.file_path %>
+                                        
+                                            <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                                            <% else %>
+                                            <%= image_tag("no.jpg") %>
+                                            <% end %>
+                                          </div>
+                                      </div>
+                                <% end %>
+                            </div>
+                    
+                        </div>
+                     </div>
+                   </div>
+
+
+
+
+
+
+                   <div class="row">
+
+                      <h1 style="color:blue">Recommended Movies: </h1>
+                          <% @user.each do |u| %>
+                          <div class="box panel panel-default pull-left">
+                          <div class="panel-body">
+                
+                          <% if u.id != current_user.id && u.romance == current_user.romance && u.comedy == current_user.comedy && u.action == current_user.action %>
+                            <% u.reviews.each do |rev| %>
+                            <% if rev.rating >= 4 %>
+                            <h3 style="color:green"> <%= u.username %> </h3>
+                            <h3 style="color:red"> <%= rev.movie.title %> </h3>
+                                  <% if  rev.movie.poster != nil && Tmdb::Movie.posters(rev.movie.tmdb_id).first != nil  %>
+                                      <%  @mov = Tmdb::Movie.posters(rev.movie.tmdb_id).first.file_path %>
+                                  
+                                      <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                                      <% else %>
+                                      <%= image_tag("no.jpg") %>
+                                      <% end %>
+                            <% end %>
+                          <% end %>
+                
+                          <% end %> 
+                          </div>
+                          </div>
+                          
+                          <% end %> 
+                  </div>
+              </div>
+
+            <% else %>
+                <div class="page">
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="slider">
+                      <ul class="slides">
+                        <li><a href="#"><%= image_tag  "movies/1.jpg", alt: "Slide 1"%></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="row">
+                      <div class="col-sm-6 col-md-12">
+                        <div class="latest-movie">
+                          <a href="#"><%= image_tag  "movies/4.jpg", alt: "Movie 1"%></a>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-12">
+                        <div class="latest-movie">
+                          <a href="#"><%= image_tag  "movies/5.jpg", alt: "Movie 2"%></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- .row -->
+
+                <div class="row">
+                  <div class="col-sm-6 col-md-3">
+                    <div class="latest-movie">
+                      <a href="#"><%= image_tag  "movies/6.jpg", alt: "Movie 3"%></a>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="latest-movie">
+                      <a href="#"><%= image_tag  "movies/7.jpg", alt: "Movie 4"%></a>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="latest-movie">
+                      <a href="#"><%= image_tag  "movies/8.jpg", alt: "Movie 5"%></a>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="latest-movie">
+                      <a href="#"><%= image_tag  "movies/9.jpg", alt: "Movie 6"%></a>
+                    </div>
+                  </div>
+                </div> <!-- .row -->
+            <% end %>
+						
+				</div> <!-- .container -->
+			</main>

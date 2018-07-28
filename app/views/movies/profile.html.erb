@@ -1,4 +1,4 @@
-<h3> Name: </h3>
+<!-- <h3> Name: </h3>
 <%= current_user.username%>
 <h3> Email: </h3>
 <%= current_user.email %>
@@ -20,4 +20,24 @@
 <h3 style="color: red"> <%= rev.movie.title %> </h3>
 <h4 style="color: green"> <%= rev.rating %> </h4>
 <% end %>
-<% end %>
+<% end %>   -->
+
+<div class = "profile">
+    <div class="propic">
+        <%= image_tag current_user.photo ,class: 'picture' %>
+    </div>
+
+        <div class= "details">
+            <h3> Name: </h3> <p> <%= current_user.username%></p>
+            
+            <h3> Email: </h3> <%= current_user.email %>
+            
+            <h3> Action Movie Rating: </h3> <%= current_user.action %>
+            
+            <h3> Romance Movie Rating: </h3> <%= current_user.romance %>
+            
+            <h3> Comedy Movie Rating: </h3> <%= current_user.comedy %>
+            
+        </div>
+         
+</div>

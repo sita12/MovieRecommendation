@@ -1,0 +1,84 @@
+// Header Styles
+
+.site-header {
+    padding: 10px 0 5px 0;
+    *zoom: 1; }
+    .site-header:after {
+      content: " ";
+      clear: both;
+      display: block;
+      overflow: hidden;
+      height: 0; }
+  
+  
+  
+  //Branding
+  
+  #branding {
+      float: left;}
+      #branding .logo {
+        margin-right: 5px; }
+  
+  
+  //Navigation
+  .main-navigation {
+    float: right;
+    background: rgb(26, 0, 0);
+    border-radius: 5px; 
+    margin: 60px 40px; 
+  }
+    .main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
+      display: inline-block;
+      vertical-align: middle; 
+    }
+    .main-navigation .menu-toggle {
+      color: #333;
+      border: none;
+      background: none;
+      font-size: 18px;
+      font-size: 1.2em;
+      padding: 8px 15px;
+      display: none;
+      outline: none; }
+      @media screen and (max-width: 990px) {
+        .main-navigation .menu-toggle {
+          display: inline-block; } }
+      @media screen and (min-width: 991px) {
+        .main-navigation .menu-toggle {
+          display: none !important; } }
+    .main-navigation .menu {
+      list-style: none;
+      margin: 0; }
+      @media screen and (min-width: 991px) {
+        .main-navigation .menu {
+          display: inline-block !important; } }
+      @media screen and (max-width: 990px) {
+        .main-navigation .menu {
+          display: none; } }
+  .main-navigation .menu-item {
+    display: inline-block;
+    padding: 10px 0; }
+    .main-navigation .menu-item a {
+      padding: 0 15px;
+      display: inline-block;
+      color: #84878d;
+      font-size: 14px;
+      font-size: 0.9333333333em;
+      font-weight: 400;
+      line-height: 1;
+      border-right: 1px solid #eeeeef; }
+
+
+    .main-navigation .menu-item.current-menu-item, .main-navigation .menu-item:hover {
+      position: relative; }
+      .main-navigation .menu-item.current-menu-item:after, .main-navigation .menu-item:hover:after {
+        content: " ";
+        position: absolute;
+        width: 80%;
+        height: 3px;
+        background-color: #ffaa3c;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: block; }
