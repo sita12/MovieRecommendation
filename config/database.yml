@@ -3,7 +3,9 @@ default: &default
   encoding: unicode
   pool: 5
   username: dipendra
+
   password: dipendra
+
   host:     <%= ENV['IP'] %>
 
 development:

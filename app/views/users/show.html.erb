@@ -1,4 +1,12 @@
-<%= image_tag @user.photo %>
+<h3> Name: </h3>
+<%= @user.username%>
+<h3> Email: </h3>
 <%= @user.email %>
+<h3> Profile Picture </h3>
+<%= image_tag @user.photo ,class: 'picture' %>
+<h3> Action Movie Rating: </h3>
 <%= @user.action %>
+<h3> Romance Movie Rating: </h3>
 <%= @user.romance %>
+<h3> Comedy Movie Rating: </h3>
+<%= @user.comedy %>

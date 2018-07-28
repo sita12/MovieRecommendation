@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
       @movie.tmdb_id = @fetched_movie.id
       @movie.imdb_id = @fetched_movie.imdb_id
 
-      @movie.save!
+      @movie.save
     end
 
     # create a new review and connect it to the current_user and the movie

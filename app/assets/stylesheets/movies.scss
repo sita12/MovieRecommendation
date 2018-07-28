@@ -1,15 +1,17 @@
+
 footer,
 header,
 nav,{
   display: block;}
 
 html,body {
-  background: #fff;
   color: #000;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; 
   height: 100%;
   width: 100%;
+  margin: 0;
+
 }
 
 
@@ -25,7 +27,7 @@ html,body {
    font-family: sans-serif; }
 
  body {
-    background-color: #c1cccbe5;
+    background-color: #c1cccb;
     color: #84878d;
     font-family: "Roboto", "Open Sans", sans-serif;
     font-size: 15px;
@@ -75,7 +77,8 @@ html,body {
   padding: 0px;
 }
 
-.contents{
+.bodycontainer{
+
   width: 100%;
   height: auto;
   margin: 0;

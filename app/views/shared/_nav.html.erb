@@ -1,32 +1,35 @@
 <header class="site-header">
-	<div class="container">
+	<div class="container" id = "container">
 		<a href="#" id="branding">
-			<%= image_tag  "flogo.png", class: "logo", width: "280px", height: "180px" %>
+			<%= image_tag  "flogo.png", class: "logo", id: "logo", width: "280px", height: "180px" %>
 		</a> <!-- #branding -->
 
-		<div class="main-navigation">
-			<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-			<ul class="menu">
+		<div class="main-navigation" id= "mainnav">
+		<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+			<ul class="menu" id = "menu">
+
 				<li class="menu-item current-menu-item"><%= link_to  "Home", root_path %></a></li>
 				<li class="menu-item"><%= link_to  "About", "#" %></li>
 				<li class="menu-item"><%= link_to  "Top Rated Movies", "#" %></li>
 
     		<% if user_signed_in? %>
-            	<%= link_to 'Profile', profile_path, class: 'btn btn-small btn-warning' %>
-				<div class="col-xs-3">  <span class="nav_links pull-right"><%= link_to 'Edit Settings', edit_user_registration_path %></span></div>
-				<div class="col-xs-3">  <span class="nav_links pull-right"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></span></div>
+			
+            	<li class="menu-item"><%= link_to 'Profile', profile_path %></li>
+				<li class="menu-item"><%= link_to 'Edit Settings', edit_user_registration_path %></li>
+				<li class="menu-item"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+
             <% else %>
               	<li class="menu-item"><%= link_to 'Sign Up', new_user_registration_path %></li>
 				<li class="menu-item"><%= link_to 'Log In', new_user_session_path %></li>
             <% end %>
 
-				<li class="menu-item"><%= link_to  "Contact", "#" %></li>
+</form>
+
+				<li class="menu-item" class="last"><%= link_to  "Contact", "#" %></li>
 			</ul> <!-- .menu -->
 			
-	<form action="#" class="search-form">
-					<input type="text" placeholder="Search...">
-					<button><i class="fa fa-search"></i></button>
-				</form>
+		
+
 	</div>
 </header>
 

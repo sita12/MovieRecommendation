@@ -1,4 +1,4 @@
-  class MovieBuilder
+class MovieBuilder
     def initialize(tmdb_id:)
       @tmdb_id = tmdb_id
       @movie = Movie.find_or_initialize_by(tmdb_id: @tmdb_id)
@@ -33,6 +33,14 @@
       return @movie
     end
   end
+
+
+
+
+
+
+
+  
 
 
 
