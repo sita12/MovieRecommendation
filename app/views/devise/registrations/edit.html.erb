@@ -47,21 +47,45 @@
   <div class="form">
         <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
+
+           <div class="field">
+          <%= f.input :username, autofocus: true %>
+           </div>
         
           <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true %>
+            <%= f.input :email %>
           </div>
         
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
+
+
+         <h4> RATINGS </h4>
+          <div class="field">
+       <%= f.input :comedy, :collection => {  'Like' =>1 ,  'Dislike' =>0 }, label: 'Comedy', :prompt => true%> 
+        
+        </div>
+
+          <div class="field">
+          <%= f.input :action, :collection => {  'Like' =>1 ,  'Dislike' =>0 }, label: 'Action', :prompt => true%> 
+        </div>
+
+        <div class="field">
+        
+          <%= f.input :romance, :collection => {  'Like' =>1 ,  'Dislike' =>0 }, label: 'Romantic', :prompt => true%> 
+        </div>
+          
+      <div class="field">
+    
+        <%= f.input :photo %>
+      </div> 
         
           <div class="field">
-            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.input :password, autocomplete: "off" %> <i>(leave blank if you don't want to change it)</i><br />
+
             <% if @minimum_password_length %>
               <br />
               <em><%= @minimum_password_length %> characters minimum</em>
@@ -69,18 +93,31 @@
           </div>
         
           <div class="field">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            <%= f.input :password_confirmation, autocomplete: "off" %>
           </div>
         
           <div class="field">
-            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-            <%= f.password_field :current_password, autocomplete: "off" %>
+            <%= f.input :current_password, autocomplete: "off" %><i>(we need your current password to confirm your changes)</i><br />
           </div>
         
           <div class="actions">
             <%= f.submit "Update" %>
           </div>
+                  <script>
+                      var password = document.getElementById("user_password")
+                        , confirm_password = document.getElementById("user_password_confirmation");
+
+                      function validatePassword(){
+                        if(password.value != confirm_password.value) {
+                          confirm_password.setCustomValidity("Password Did not match");
+                        } else {
+                          confirm_password.setCustomValidity('');
+                        }
+                      }
+
+                      password.onchange = validatePassword;
+                      confirm_password.onkeyup = validatePassword;
+                  </script>
         <% end %>
         
         <h3>Delete Account</h3>

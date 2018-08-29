@@ -33,6 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.integer :comedy
       t.integer :action
       t.integer :romance
+      t.integer :rank
       t.timestamps null: false
     end
 

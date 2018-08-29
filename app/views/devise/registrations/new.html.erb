@@ -86,19 +86,18 @@ confirm_password.onkeyup = validatePassword;
         </div>
           
             <h4> RATINGS </h4>
-            <h5> Rate out of 5(__/5) </h5>
           <div class="field">
-       
-          <%= f.input :comedy %>
+       <%= f.input :comedy, :collection => {  'Like' =>1 ,  'Dislike' =>0 }, label: 'Comedy', :prompt => true%> 
+        
         </div>
 
           <div class="field">
-          <%= f.input :action %>
+          <%= f.input :action, :collection => {  'Like' =>1 ,  'Dislike' =>0 }, label: 'Action', :prompt => true%> 
         </div>
 
         <div class="field">
         
-          <%= f.input :romance %>
+          <%= f.input :romance, :collection => {  'Like' =>1 ,  'Dislike' =>0 }, label: 'Romantic', :prompt => true%> 
         </div>
           
       <div class="field">

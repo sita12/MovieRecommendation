@@ -31,8 +31,7 @@ class ReviewsController < ApplicationController
       @movie.poster = @fetched_movie.poster_path
       @movie.homepage = @fetched_movie.homepage
       @movie.tmdb_id = @fetched_movie.id
-      @movie.imdb_id = @fetched_movie.imdb_id
-
+      @movie.imdb_id = @fetched_movie.imdb_id                           
       @movie.save
     end
 
@@ -52,6 +51,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating)
+    params.require(:review).permit(:rating, :remote_genre_url)
   end
 end
