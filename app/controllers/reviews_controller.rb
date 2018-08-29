@@ -29,6 +29,7 @@ class ReviewsController < ApplicationController
       @movie.average_vote = @fetched_movie.vote_average
       @movie.vote_count = @fetched_movie.vote_count
       @movie.poster = @fetched_movie.poster_path
+      
       @movie.homepage = @fetched_movie.homepage
       @movie.tmdb_id = @fetched_movie.id
       @movie.imdb_id = @fetched_movie.imdb_id                           
