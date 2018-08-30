@@ -27,7 +27,7 @@
                     
                         <div id="movies">
 
-                    
+                
                             </div>
                     
                         </div>
@@ -72,11 +72,11 @@
                             <% if rev.rating >= 4 %>
                             <h3 style="color:green"> <%= u.username %> </h3>
                             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-                                  <% if  rev.movie.poster != nil && Tmdb::Movie.posters(rev.movie.tmdb_id).first != nil  %>
-                                      <%  @mov = Tmdb::Movie.posters(rev.movie.tmdb_id).first.file_path %>
-                                  
-                                      <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                              <% if  rev.movie.poster != nil  %>
                                       
+                                  
+                                      <%= image_tag("https://image.tmdb.org/t/p/w185#{rev.movie.poster}") %>
+                      
                                       <% else %>
                                       <%= image_tag("no.jpg") %>
                                       <% end %>
@@ -96,10 +96,10 @@
                             <% if rev.rating >= 4 %>
                             <h3 style="color:green"> <%= u.username %> </h3>
                             <h3 style="color:red"> <%= rev.movie.title %> </h3>
-                                  <% if  rev.movie.poster != nil && Tmdb::Movie.posters(rev.movie.tmdb_id).first != nil  %>
-                                      <%  @mov = Tmdb::Movie.posters(rev.movie.tmdb_id).first.file_path %>
-                                  
-                                      <%= image_tag("https://image.tmdb.org/t/p/w185#{@mov}") %>
+                                   <% if  rev.movie.poster != nil  %>
+                                      
+                                      <%= image_tag("https://image.tmdb.org/t/p/w185#{rev.movie.poster}") %>
+
                                       <% else %>
                                       <%= image_tag("no.jpg") %>
                                       <% end %>
@@ -179,8 +179,6 @@
                   </div>
                 </div> <!-- .row -->
             <% end %>
-            
-        </div> <!-- .container -->
-      </main>
-
-  
+						
+				</div> <!-- .container -->
+			</main>

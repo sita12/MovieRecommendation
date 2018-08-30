@@ -82,7 +82,7 @@ function displayMovies(data){
               <input type="hidden" name="authenticity_token" value=${window._token} />
               <input type="hidden" name="tmdb_id" value=${movie["id"]} />
               <b> Ratings(Rate Movie out of 5): </b>
-              <input type="text" name= "review[rating]" class="form-control" placeholder="Ratings out of 10">
+              <input type="number" name= "review[rating]" class="form-control" placeholder="Ratings out of 5(0 to 5)" min="0" max="5"  step = 'any'>
               <br />
               <input type="submit" class="btn btn-success pull-right" />
             </form>
