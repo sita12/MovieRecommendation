@@ -18,7 +18,7 @@
                      <h2 style="color:green;margin-top:30px;"> User Preference </h2>
             <h3 style="color:red;margin-top:30px;"> Action Movie: </h3> 
             <% if current_user.action ==1 %>
-            <%= image_tag("like.jpeg" , class:"image")  %>
+            <%= image_tag("like.jpg" , class:"image")  %>
             <% else %>
 
               <%= image_tag("dislike.jpg" , class:"image")  %>
@@ -31,7 +31,7 @@
 
             <h3 style="color:red;"> Romantic Movie: </h3> 
             <% if current_user.romance ==1 %>
-            <%= image_tag("like.jpeg" , class:"image") %>
+            <%= image_tag("like.jpg" , class:"image") %>
             <% else %>
 
               <%= image_tag("dislike.jpg" , class:"image")  %>
@@ -40,7 +40,7 @@
 
             <h3 style="color:red;margin-top:30px;"> Comedy Movie: </h3> 
             <% if current_user.comedy ==1 %>
-            <%= image_tag("like.jpeg" , class:"image")  %>
+            <%= image_tag("like.jpg" , class:"image")  %>
             <% else %>
 
               <%= image_tag("dislike.jpg" , class:"image")  %>
